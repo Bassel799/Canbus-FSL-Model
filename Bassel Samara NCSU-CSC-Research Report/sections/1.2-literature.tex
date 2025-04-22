@@ -1,0 +1,14 @@
+\subsection{Short Literature Summary}
+\label{subsec:literature}
+
+A subfield of machine learning called Few-Shot Learning (FSL) was created to make it possible to classify novel or unknown categories using a small number of labeled examples \cite{snell2017prototypical}. This method works particularly well in fields like cybersecurity, where there are few examples of malicious events with labels. Episodic training \cite{sicara2023easyfsl}, which simulates the limited availability of labeled data per class, is typically used in FSL methods. A query set (unseen samples for evaluation) and a support set (a small number of labeled samples) are included in every training episode.
+
+Prototypical Networks \cite{snell2017prototypical} operate by calculating class prototypes from embedded support set features:
+\begin{equation}
+p_c = \frac{1}{|S_c|} \sum_{x_i \in S_c} f_\theta(x_i)
+\end{equation}
+Here, $p_c$ denotes the class prototype, $S_c$ represents the support samples for class $c$, and $f_\theta$ is the embedding function, typically a CNN architecture. Classification decisions are made based on Euclidean distances between query instances and these prototypes:
+\begin{equation}
+d(x, p_c) = \sqrt{\sum_{i=1}^{D}(x_i - p_{c,i})^2}
+\end{equation}
+where $D$ specifies embedding dimensions.

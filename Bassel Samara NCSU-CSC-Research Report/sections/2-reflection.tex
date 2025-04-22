@@ -1,0 +1,14 @@
+\section{Reflection Elements}
+
+\subsection{Lessons Learned About Research}
+\label{subsec:lessons}
+I learned a great deal about the research process and the real-world difficulties of using machine learning techniques to solve cybersecurity issues during this project. The project's scope was larger than I anticipated. Although the basic concept of applying Few-Shot Learning (FSL) to the classification of CAN Bus attacks appeared simple, careful data preprocessing, model adaptation, and iterative testing were necessary for its implementation. For significant results, it was essential to focus on prototypical networks and particular datasets (SynCanAttacks and CarHackingAttacks). Converting CAN Bus data into an FSL-compatible format was one of the main obstacles. By reorganizing the data into image-like tensors and making sure it was compatible with the ResNet12 backbone, the initial errors—such as tensor dimension mismatches—were fixed.
+
+\subsection{Project Evolution}
+\label{subsec:projectevo}
+From our initial meetings to the finished product, the project underwent significant change. Understanding FSL concepts and investigating current implementations, such as Prototypical Networks, were the main goals of the first phase (January–February 2025). Data formatting errors and model input dimensions were fixed by adapting the CAN Bus dataset to the FSL pipeline. The model was validated on the CarHacking dataset in the mid-phase (March 2025), revealing inconsistencies in data usage while achieving 100\% accuracy. As the project grew to include the SynCAN dataset, variations in signal counts per message necessitated modifications to feature extraction and tensor reshaping. Results were consolidated and performance across both datasets was confirmed in the final phase (April 2025). The model's efficiency (e.g., less than 6KB memory usage) and real-time applicability were highlighted in the research report. According to our meeting notes, the project's success was guaranteed by the iterative process of testing, improving, and validating.
+
+\subsection{Scope Changes}
+\label{subsec:scope}
+
+There were two significant changes to the project's scope. At first, it was intended to use other datasets, such as Survival-IDS, but the small number of attack blocks (just 29) prevented useful analysis. SynCAN and CarHackingAttacks were given priority since they offered enough information for a thorough analysis. In order to compare the results, it was intended to test other FSL techniques (such as Matching Networks); however, it was already established that Prototypical Networks consistently outperformed them in terms of accuracy and training stability. As a result, the emphasis was reduced to Prototypical Network optimization. I learned from these adjustments how crucial it is to be flexible in research, adjusting to data limitations and concentrating on the most promising methods to produce useful outcomes.
